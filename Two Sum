@@ -1,6 +1,19 @@
+/*
+             Example: nums = [2, 7, 11, 15], target = 9
+
+             Step 1: i = 0, nums[i] = 2
+                     complement = 9 - 2 = 7
+                     ✅ We need 7 to make 9. Is 7 already seen? No → store 2.
+
+             Step 2: i = 1, nums[i] = 7
+                     complement = 9 - 7 = 2
+                     ✅ Do we already have 2? Yes, from step 1!
+                     🎯 Pair found → (2, 7), indices (0, 1)
+            */
+
 class Solution {
     fun twoSum(nums: IntArray, target: Int): IntArray {
-        val map = mutableMapOf<Int, Int>()
+        val map = mutableMapOf<Int, Int>()  // number → index
 
         for(i in nums.indices){
             val complement = target - nums[i]
