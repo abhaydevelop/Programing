@@ -1,0 +1,32 @@
+fun main() {
+    val s = "Hello"
+    var result = reverseVovel(s)
+    print(result) //holle
+}
+
+fun reverseVovel(srt : String) : String{
+    var chars = srt.toCharArray()
+    var i = 0
+    var j = chars.lastIndex
+    
+    while(i < j){
+        while(i < j && !isVovel(chars[i])) i++        
+        
+        while(i < j && !isVovel(chars[j])) j--       
+        
+        var temp = chars[i]
+        chars[i] = chars[j]
+        chars[j] = temp      
+        
+        i++
+        j--
+        
+    }
+     
+    return String(chars)    
+}
+
+
+fun isVovel(ch : Char) : Boolean{
+    return ch.lowercaseChar() in listOf('a', 'e', 'i', 'o', 'u')
+}
