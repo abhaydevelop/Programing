@@ -1,0 +1,18 @@
+fun main() {
+    
+    val arr = intArrayOf(1, 3, 1, 7, 3, 1, 6)    
+    arr.sort()
+    
+    var l = 0
+    
+    for(i in 1 until arr.size){
+        if(arr[i] != arr[l]){
+            
+            l++ 
+            arr[l] = arr[i]
+            
+        }
+    }
+    
+    println(arr.slice(0..l))
+}
