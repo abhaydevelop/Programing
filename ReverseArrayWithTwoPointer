@@ -1,0 +1,23 @@
+fun reverse(arr: IntArray): IntArray {
+    var l = 0
+    var r = arr.size - 1
+    
+    while (l < r) {
+        val temp = arr[l]
+        arr[l] = arr[r]
+        arr[r] = temp
+        
+        l++
+        r--
+    }
+    
+    return arr
+}
+
+fun main() {
+    val arr = intArrayOf(1, 3, 5, 7, 9, 11, 15)
+   
+    val result = reverse(arr)
+
+    println(result.contentToString())
+}
