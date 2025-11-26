@@ -1,0 +1,24 @@
+fun main() {
+    
+    val str = "hello"
+    
+    var charArr = str.toCharArray()
+    
+    print(charArr.size)
+    
+    var left = 0
+    var right = charArr.size - 1
+    
+    while(left < right){
+        
+        var temp = charArr[left]
+        charArr[left] = charArr[right]
+        charArr[right] = temp
+        
+        left++
+        right--
+    }
+    
+    print(charArr)
+    
+}
