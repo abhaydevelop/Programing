@@ -1,0 +1,60 @@
+///////////////Both approach we have to focus on given string on naming conventions ///////////////////
+//beause Capital letters and small letters have different ASCII/Unicode values. //////////////////////
+
+/////////////// First Approach ////////////////////
+
+fun main() {
+    
+    val str = "madam"    
+    var charArr = str.toCharArray()    
+    var left = 0
+    var right = charArr.size - 1
+    
+    while(left < right){
+        
+        var temp = charArr[left]
+        charArr[left] = charArr[right]
+        charArr[right] = temp
+        
+        left++
+        right--
+    }
+    
+    println(charArr)
+    
+    if(str == charArr.joinToString("")){
+        print("This String Is Palindrom")
+    }else{
+         print("This String Is Not Palindrom")
+    }    
+}
+
+
+/////////////// Second Approach Best With Time And Space Complexity ////////////////////
+
+fun main() {
+    
+   val str = "madam"
+    
+   if(isPalindromString(str)){
+       print("Given String Is Palindrom")
+   }else{
+       print("Given String Is Not Palindromm")
+   }
+    
+}
+
+fun isPalindromString(str : String) : Boolean{
+    
+    var charStr = str.toCharArray()
+    var left = 0
+    var right = charStr.size - 1
+    
+    while(left < right){
+        if(charStr[left] != charStr[right]) return false
+        left++
+        right--
+  
+    }
+    return true
+}
