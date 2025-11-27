@@ -1,0 +1,67 @@
+////////////////  First Way      ////////////////////
+
+fun main() {
+   val arr1 = intArrayOf(10,12,30,40)
+   val arr2 = intArrayOf(2,4,10,13,32)   
+   var countArrSizeResult = IntArray(arr1.size + arr2.size)
+    
+   var i = 0
+   var j = 0
+   var k = 0   
+    
+   while(i < arr1.size && j < arr2.size){
+      if(arr1[i] <= arr2[j]){
+         countArrSizeResult[k] = arr1[i]
+         i++
+      }else{
+         countArrSizeResult[k] = arr2[j]
+         j++
+      }
+        k++
+    }      
+   
+   // copy remaining arr1
+    while (i < arr1.size) {
+        countArrSizeResult[k] = arr1[i]
+        i++
+        k++
+    }
+
+    // copy remaining arr2
+    while (j < arr2.size) {
+        countArrSizeResult[k] = arr2[j]
+        j++
+        k++
+    } 
+    print(countArrSizeResult.joinToString(" ")) 
+}
+
+
+//////////////// Second And Small Code ///////////////
+
+fun main() {
+
+    val arr1 = intArrayOf(10, 20, 30, 40, 50)
+    val arr2 = intArrayOf(2, 3, 5, 6, 23)
+
+    val result = IntArray(arr1.size + arr2.size)
+
+    var i = 0
+    var j = 0
+    var k = 0
+
+    while (k < result.size) {
+        val x = if (i < arr1.size) arr1[i] else Int.MAX_VALUE
+        val y = if (j < arr2.size) arr2[j] else Int.MAX_VALUE
+
+        if (x <= y) {
+            result[k++] = x
+            i++
+        } else {
+            result[k++] = y
+            j++
+        }
+    }
+
+    println(result.joinToString(" "))
+}
