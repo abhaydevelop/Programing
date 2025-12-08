@@ -1,0 +1,59 @@
+////////////// JAVA Code ////////////////
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+        int row = 5;
+        int col = row * 2 - 1;
+        
+        System.out.println("Row - " + row + " : Col : " + col);
+        
+        for(int i = 1; i <= row; i++){
+            for(int j = 1; j <= col; j++){
+                if(j == row){
+                    System.out.print(" * ");
+                } else {
+                    int index = i - 1;
+                    int starFromStart = row - index;
+                    int starFstarFromEnd = row + index;
+                    if(j >= starFromStart && j <= starFstarFromEnd){
+                        System.out.print(" * ");
+                    } else {
+                        System.out.print("   ");
+                    } 
+                
+                }
+            }
+            System.out.println("");
+        }
+    }
+}
+
+/////////////////// KOTLINE ////////////////
+fun main() {
+
+    val row = 5 
+    val col = row * 2 - 1
+    
+    println("Row - " + row + " : Col : " + col)
+    
+    for(i in 1..row){
+        for(j in 1..col){if(j == row){
+                    System.out.print(" * ")
+                } else {
+                    var index = i - 1;
+                    var starFromStart = row - index
+                    var starFstarFromEnd = row + index
+                    if(j >= starFromStart && j <= starFstarFromEnd){
+                        System.out.print(" * ")
+                    } else {
+                        System.out.print("   ")
+                    }                 
+                }
+        }        
+        println()
+    }
+}
+
