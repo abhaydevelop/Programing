@@ -1,0 +1,36 @@
+fun main() {
+    
+   val arr = arrayListOf(1, 8, 6, 2, 5, 4, 8, 3, 7)
+   
+   var left = 0
+   var right = arr.size - 1
+   var result = 0 
+    
+   while(left < right){
+       
+       var width = right - left
+       var height = 0
+       
+       println("width=$width")    
+       
+       if(arr[left] > arr[right]){
+           height = arr[right]           
+           right--
+       }else{
+           height = arr[left]
+           left++
+       }
+       var area = height * width
+       
+       if(result < area){
+           result = area
+       }
+       
+       println("width=$width height=$height area=$area result = $result")      
+       
+   }  
+   
+   print("Output = $result")
+   
+   
+}
